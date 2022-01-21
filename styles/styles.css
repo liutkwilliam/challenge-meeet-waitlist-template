@@ -285,10 +285,4 @@ h1 {
     bottom: 4rem;
   }
 }
-
-@media (min-width: 992px) {
-  .follow-twitter {
-    bottom: 6rem;
-  }
-}
 /*# sourceMappingURL=styles.css.map */
