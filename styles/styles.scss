@@ -1,0 +1,238 @@
+// Variables
+
+$primary: #32f5c8;
+$dark: #013243;
+$light: #a9bdc6;
+$speed: all .25s ease;
+
+// Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Sen:wght@400;700;800&display=swap');
+
+// transition
+
+@mixin standard-transition {
+    -webkit-transition: $speed;
+    -moz-transition: $speed;
+    -ms-transition: $speed;
+    -o-transition: $speed;
+    transition: $speed;
+}
+
+// scss
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $dark;
+    color: $light;
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    position: fixed;
+    z-index: -1;
+    width: 2000px;
+    img {
+        @include standard-transition;
+    }
+    .left-avatars {
+        img {
+            position: fixed;
+            top: 7rem;
+            left: 3rem;
+            transform: scale(0.8);
+            @media (min-width: 768px) {
+                transform: scale(1);
+            }
+            @media(min-width: 992px) {
+                left: 6vw;
+            }
+        }
+    }
+    .right-avatars {
+        img {
+            position: fixed;
+            &:nth-child(1){
+                display: none;
+                @media (min-width: 768px) {
+                    display: block;
+                    right: 2rem;
+                    top: 20rem;
+                }
+                @media (min-width: 992px) {
+                    top: 30rem;
+                    right: 14vw;
+                }
+            }
+            &:nth-child(2){
+                top: 7rem;
+                right: .5rem;
+                @media (min-width: 768px) {
+                    top: 4rem;
+                    right: 2rem;
+                }
+                @media (min-width: 992px) {
+                    top: 3rem;
+                    right: 16vw;
+                }
+            }
+            &:nth-child(3){
+                bottom: 6rem;
+                right: .5rem;
+                @media (min-width: 768px) {
+                    right: 4rem;
+                }
+                @media (min-width: 992px) {
+                    right: 16vw;
+                }
+            }
+            &:nth-child(4){
+                display: none;
+                @media (min-width: 768px) {
+                    display: block;
+                    top: 14rem;
+                    right: 14rem;
+                }
+                @media (min-width: 992px) {
+                    top: 6rem;
+                    right: 28vw;
+                }
+            }          
+        }
+    }
+}
+
+.container {
+    margin: 1.5rem auto;
+    padding: 0 1.5rem;
+    width: 100%;
+    @include standard-transition;
+    @media(min-width: 992px) {
+        flex-wrap: nowrap;
+    }
+    @media(min-width: 1200px){
+        max-width: 1440px;
+    }
+}
+
+nav {
+    img {
+        padding: 0;
+        @include standard-transition;
+        @media (min-width: 768px) {
+            padding: 1rem 0;
+        }
+    }
+}
+
+main {
+    min-height: 75vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    @include standard-transition;
+    @media(min-width: 992px) {
+        display: block;
+        margin: 2rem 0;
+    }
+    @media (min-width: 1200px) {
+        margin: auto;
+        min-height: 85vh;
+    }
+    p {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        width: 100%;
+        @include standard-transition;
+        @media (min-width: 768px) {
+            width: 80%;
+            max-width: 500px;
+        }
+    }
+}
+
+h1 {
+    color: $primary;
+    font-family: 'Sen', sans-serif;
+    font-size: 3rem;
+    margin: 2rem 0;
+    @include standard-transition;
+    @media (min-width: 576px) {
+        font-size: 4.5rem;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 6rem;
+    }
+    
+    @media (min-width: 992px) {
+        font-size: 8rem;
+        margin: 1rem 0;
+    }
+    
+    @media (min-width: 1400px) {
+        font-size: 12rem;
+    }
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    background-color: $primary;
+    color: $dark;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border-radius: .5rem;
+    @include standard-transition;
+    @media(min-width: 992px) {
+        padding: 1.5rem 2rem;
+        font-size: 1.5rem;
+    }
+    &:hover {
+        background-color: darken($primary, 15%);
+    }
+}
+
+
+.follow-twitter {
+    position: fixed;
+    bottom: 0;
+    margin: .5rem 0;
+    display: flex;
+    justify-content: center;
+    @include standard-transition;
+    p {
+        padding: 0 1rem;
+        font-size: 1.5rem;
+    }
+    @media (min-width: 768px) {
+        bottom: 4rem;
+    }
+    @media (min-width: 992px) {
+        bottom: 6rem;
+    }
+}
+
+// Responsive Design Template
+
+@media (min-width: 576px) { }
+
+@media (min-width: 768px) {  }
+
+@media (min-width: 992px) {  }
+
+@media (min-width: 1200px) {  }
+
+@media (min-width: 1400px) {  }
